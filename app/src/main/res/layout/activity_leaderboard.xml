@@ -1,44 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Location: app/src/main/res/layout/activity_leaderboard.xml -->
-<LinearLayoaut xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/background">
 
-    <!-- Top Bar -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/surface"
-        android:padding="16dp"
-        android:elevation="4dp">
-
-        <ImageView
-            android:id="@+id/btnBack"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_revert"
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:tint="@color/text_primary" />
-
-        <TextView
-            style="@style/MinecraftHeading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/leaderboard"
-            android:layout_centerInParent="true" />
-
-    </RelativeLayout>
-
-    <!-- Leaderboard List -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLeaderboard"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:clipToPadding="false" />
+        android:orientation="vertical">
 
-</LinearLayoaut>
+        <!-- Responsive Top Bar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/surface"
+            android:elevation="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@color/minecraft_green"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    style="@style/MinecraftHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="🏆 @string/leaderboard"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    app:layout_constraintStart_toEndOf="@id/btnBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Leaderboard Header -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/MinecraftCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardElevation="8dp"
+            app:strokeColor="@color/gold"
+            app:strokeWidth="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    style="@style/MinecraftBody"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="Rank"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/gold" />
+
+                <TextView
+                    style="@style/MinecraftBody"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Player"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/gold" />
+
+                <TextView
+                    style="@style/MinecraftBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trophies"
+                    android:textStyle="bold"
+                    android:textColor="@color/gold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Leaderboard List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/surface"
+        android:elevation="16dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_navigation_menu"
+        app:itemRippleColor="@color/minecraft_green" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
