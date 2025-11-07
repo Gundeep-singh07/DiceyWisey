@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Minecraft Theme Colors -->
+    <color name="minecraft_green">#4A9A0A</color>
+    <color name="minecraft_green_dark">#3A7A08</color>
+    <color name="minecraft_brown">#8B5A3C</color>
+    <color name="minecraft_brown_dark">#6B4A2C</color>
+
+    <!-- Background Colors -->
+    <color name="background">#2D2D2D</color>
+    <color name="dark_background">#2D2D2D</color>
+    <color name="surface">#3D3D3D</color>
+    <color name="card_background">#4D4D4D</color>
+
+    <!-- Basic Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="light_gray">#B0B0B0</color>
+    <color name="dark_gray">#3D3D3D</color>
+
+    <color name="leaderboard_gold">#FFD700</color>
+    <color name="leaderboard_silver">#C0C0C0</color>
+    <color name="leaderboard_bronze">#CD7F32</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#808080</color>
+
+    <!-- Leaderboard Colors -->
+    <color name="gold">#FFD700</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="bronze">#CD7F32</color>
+    <color name="current_user_highlight">#4A9A0A</color>
+    <color name="leaderboard_current_user">#4A9A0A</color>
+
+    <!-- Status Colors -->
+    <color name="error">#CF6679</color>
+    <color name="error_red">#CF6679</color>
+    <color name="success_green">#4CAF50</color>
+</resources>

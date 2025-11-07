@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Base.Theme.DiceyWisey" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/minecraft_green</item>
+        <item name="colorPrimaryVariant">@color/minecraft_green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/minecraft_brown</item>
+        <item name="colorSecondaryVariant">@color/minecraft_brown_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/black</item>
+
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="backgroundColor">@color/dark_background</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/light_gray</item>
+
+        <!-- Button style -->
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+    </style>
+
+    <style name="Theme.DiceyWisey" parent="Base.Theme.DiceyWisey" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.DiceyWisey.Splash" parent="Theme.DiceyWisey">
+        <item name="android:windowBackground">@color/minecraft_green</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

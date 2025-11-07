@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Add vibration permission for game effects -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DiceyWisey"
+        tools:targetApi="31">
+
+        <!-- Splash Activity (Launcher) -->
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DiceyWisey">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:exported="false" />
+
+        <!-- Signup Activity -->
+        <activity
+            android:name=".Activities.SignupActivity"
+            android:exported="false" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".Activities.MainActivity"
+            android:exported="false" />
+
+        <!-- Game Activity -->
+        <activity
+            android:name=".Activities.GameActivity"
+            android:exported="false" />
+
+        <!-- Leaderboard Activity -->
+        <activity
+            android:name=".Activities.LeaderboardActivity"
+            android:exported="false" />
+
+        <!-- Profile Activity -->
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:exported="false" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

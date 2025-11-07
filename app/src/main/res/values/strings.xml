@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DiceyWisey</string>
+
+    <!-- Login Screen -->
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="welcome_back">Welcome Back!</string>
+
+    <!-- Signup Screen -->
+    <string name="signup">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    <string name="create_account">Create Account</string>
+
+    <!-- Game Screen -->
+    <string name="roll_dice">Roll Dice</string>
+    <string name="your_score">Your Score</string>
+    <string name="games_played">Games Played</string>
+    <string name="you_got">You got %1$d!</string>
+    <string name="trophy_earned">+%1$d Trophies! 🏆</string>
+
+    <!-- Main Menu -->
+    <string name="play">Play Game</string>
+    <string name="play_game">Play Game</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+
+    <!-- Leaderboard -->
+    <string name="top_players">Top Players</string>
+    <string name="rank">Rank</string>
+    <string name="player">Player</string>
+    <string name="trophies">Trophies</string>
+
+    <!-- Profile -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save Changes</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="total_trophies">Total Trophies</string>
+    <string name="total_games">Games Played</string>
+
+    <!-- Settings -->
+    <string name="sound_effects">Sound Effects</string>
+    <string name="vibration">Vibration</string>
+    <string name="about">About</string>
+    <string name="version">Version 1.0</string>
+    <string name="about_text">DiceyWisey v1.0\n\nA Minecraft-themed dice rolling game.\nRoll the dice and collect trophies!</string>
+
+    <!-- Messages -->
+    <string name="please_fill_all">Please fill in all fields</string>
+    <string name="passwords_dont_match">Passwords don\'t match</string>
+    <string name="invalid_credentials">Invalid username or password</string>
+    <string name="username_exists">Username already exists</string>
+    <string name="profile_updated">Profile updated successfully</string>
+    <string name="error_empty_fields">Please fill in all fields</string>
+    <string name="login_success">Login successful!</string>
+    <string name="error_invalid_credentials">Invalid username or password</string>
+
+
+    <!-- Error Messages -->
+    <string name="error_username_exists">Username already exists</string>
+    <string name="error_password_mismatch">Passwords don\'t match</string>
+    <string name="signup_success">Account created successfully!</string>
+
+
+</resources>
