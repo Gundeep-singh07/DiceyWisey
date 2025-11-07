@@ -6,25 +6,22 @@
         <item name="colorPrimary">@color/minecraft_green</item>
         <item name="colorPrimaryVariant">@color/minecraft_green_dark</item>
         <item name="colorOnPrimary">@color/white</item>
-
         <!-- Secondary brand color -->
         <item name="colorSecondary">@color/minecraft_brown</item>
         <item name="colorSecondaryVariant">@color/minecraft_brown_dark</item>
         <item name="colorOnSecondary">@color/white</item>
-
         <!-- Status bar color -->
         <item name="android:statusBarColor">@color/black</item>
-
         <!-- Background colors -->
         <item name="android:windowBackground">@color/dark_background</item>
         <item name="backgroundColor">@color/dark_background</item>
-
         <!-- Text colors -->
         <item name="android:textColorPrimary">@color/white</item>
         <item name="android:textColorSecondary">@color/light_gray</item>
-
         <!-- Button style -->
         <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <!-- AlertDialog style -->
+        <item name="alertDialogTheme">@style/MinecraftAlertDialog</item>
     </style>
 
     <style name="Theme.DiceyWisey" parent="Base.Theme.DiceyWisey" />
@@ -34,5 +31,27 @@
         <item name="android:windowBackground">@color/minecraft_green</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- Custom AlertDialog Theme -->
+    <style name="MinecraftAlertDialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="colorPrimary">@color/minecraft_green</item>
+        <item name="colorAccent">@color/minecraft_green</item>
+        <item name="android:background">@color/surface</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MinecraftPositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MinecraftNegativeButton</item>
+    </style>
+
+    <style name="MinecraftPositiveButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/minecraft_green</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="MinecraftNegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/error</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
     </style>
 </resources>

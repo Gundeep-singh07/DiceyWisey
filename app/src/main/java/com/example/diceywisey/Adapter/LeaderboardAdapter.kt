@@ -1,5 +1,4 @@
 package com.example.diceywisey.Adapter
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +27,6 @@ class LeaderboardAdapter(private val entries: List<LeaderboardEntry>) :
 
     override fun onBindViewHolder(holder: LeaderboardViewHolder, position: Int) {
         val entry = entries[position]
-
         holder.tvRank.text = entry.rank.toString()
         holder.tvUsername.text = entry.username
         holder.tvGamesPlayed.text = "${entry.gamesPlayed} games"
@@ -39,18 +37,26 @@ class LeaderboardAdapter(private val entries: List<LeaderboardEntry>) :
             holder.cardLeaderboard.setCardBackgroundColor(
                 holder.itemView.context.getColor(R.color.leaderboard_current_user)
             )
+            // Make text white for current user so it's visible on green background
+            holder.tvUsername.setTextColor(holder.itemView.context.getColor(R.color.white))
+            holder.tvGamesPlayed.setTextColor(holder.itemView.context.getColor(R.color.white))
+            holder.tvTrophies.setTextColor(holder.itemView.context.getColor(R.color.white))
+            holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.white))
         } else {
             holder.cardLeaderboard.setCardBackgroundColor(
                 holder.itemView.context.getColor(R.color.card_background)
             )
-        }
+            holder.tvUsername.setTextColor(holder.itemView.context.getColor(R.color.text_primary))
+            holder.tvGamesPlayed.setTextColor(holder.itemView.context.getColor(R.color.text_secondary))
+            holder.tvTrophies.setTextColor(holder.itemView.context.getColor(R.color.minecraft_green))
 
-        // Color ranks
-        when (entry.rank) {
-            1 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_gold))
-            2 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_silver))
-            3 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_bronze))
-            else -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.text_primary))
+            // Color ranks for top 3
+            when (entry.rank) {
+                1 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_gold))
+                2 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_silver))
+                3 -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.leaderboard_bronze))
+                else -> holder.tvRank.setTextColor(holder.itemView.context.getColor(R.color.text_primary))
+            }
         }
     }
 

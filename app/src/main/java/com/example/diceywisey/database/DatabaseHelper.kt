@@ -1,13 +1,10 @@
-// Location: app/src/main/java/com/diceywisey/database/DatabaseHelper.kt
 package com.example.diceywisey.database
-
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     companion object {
         private const val DATABASE_NAME = "DiceyWisey.db"
         private const val DATABASE_VERSION = 1
@@ -73,7 +70,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             arrayOf(username, password),
             null, null, null
         )
-
         var user: User? = null
         if (cursor.moveToFirst()) {
             user = User(
@@ -116,7 +112,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             arrayOf(userId.toString()),
             null, null, null
         )
-
         var user: User? = null
         if (cursor.moveToFirst()) {
             user = User(
@@ -134,10 +129,14 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         return user
     }
 
-    fun updateUserProfile(userId: Int, email: String): Boolean {
+    fun updateUserProfile(userId: Int, username: String, email: String, password: String?): Boolean {
         val db = writableDatabase
         val values = ContentValues().apply {
+            put(COL_USERNAME, username)
             put(COL_EMAIL, email)
+            if (password != null) {
+                put(COL_PASSWORD, password)
+            }
         }
         val result = db.update(TABLE_USERS, values, "$COL_ID = ?", arrayOf(userId.toString()))
         db.close()
@@ -158,12 +157,10 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun getLeaderboard(currentUserId: Int): List<LeaderboardEntry> {
         val db = readableDatabase
         val leaderboard = mutableListOf<LeaderboardEntry>()
-
         val cursor = db.rawQuery(
             "SELECT $COL_ID, $COL_USERNAME, $COL_TROPHIES, $COL_GAMES_PLAYED FROM $TABLE_USERS ORDER BY $COL_TROPHIES DESC",
             null
         )
-
         var rank = 1
         while (cursor.moveToNext()) {
             val userId = cursor.getInt(0)

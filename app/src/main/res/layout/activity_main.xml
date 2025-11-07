@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,13 +28,13 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 
-                <!-- App Logo/Icon -->
+                <!-- App Logo -->
                 <ImageView
                     android:id="@+id/appLogo"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:scaleType="centerCrop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/app_logo"
+                    android:scaleType="centerInside"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" />
@@ -68,9 +69,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <!-- Main Content -->
@@ -216,11 +215,8 @@
                                     android:textColor="@color/text_secondary"
                                     android:layout_marginTop="4dp" />
                             </LinearLayout>
-
                         </LinearLayout>
-
                     </LinearLayout>
-
                 </com.google.android.material.card.MaterialCardView>
 
                 <!-- Animated Play Button -->
@@ -242,46 +238,10 @@
                     style="@style/MinecraftButtonSecondary"
                     android:text="🏆 @string/leaderboard"
                     android:textSize="18sp"
-                    android:layout_height="60dp" />
-
-                <!-- Quick Stats Card -->
-                <com.google.android.material.card.MaterialCardView
-                    style="@style/MinecraftCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    app:cardElevation="4dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            style="@style/MinecraftHeading"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="🎯 Quick Stats"
-                            android:textSize="18sp"
-                            android:layout_marginBottom="12dp" />
-
-                        <TextView
-                            android:id="@+id/tvQuickStats"
-                            style="@style/MinecraftBody"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ready to roll? Start playing now!"
-                            android:textColor="@color/text_secondary" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="80dp" />
             </LinearLayout>
-
         </androidx.core.widget.NestedScrollView>
-
     </LinearLayout>
 
     <!-- Bottom Navigation Bar -->
@@ -297,5 +257,4 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu"
         app:itemRippleColor="@color/minecraft_green" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
